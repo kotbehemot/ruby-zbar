@@ -7,7 +7,7 @@ module ZBar
         ZBar.method(:zbar_processor_destroy)
         )
   
-      if ZBar.zbar_processor_init(@processor, nil, 0) > 0
+      if ZBar.zbar_processor_init(@processor, '', 0) > 0
         ZBar._zbar_error_spew(@processor, 0)
         raise "error!"
       end
