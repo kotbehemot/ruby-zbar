@@ -3,6 +3,13 @@ by Will Glynn
 
 http://github.com/delta407/ruby-zbar
 
+== Modifications 
+by Piotr Barczuk (kot_behemot)
+https://github.com/kotbehemot/ruby-zbar/network
+
+* Added ability to use internal zbar conversion
+* Fixed an error with null-pointers in the FFI method call
+
 == DESCRIPTION:
 
 Ruby bindings for ZBar, a barcode recognition library.

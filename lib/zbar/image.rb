@@ -16,6 +16,11 @@ module ZBar
     # This function uses the internal ZBar conversion function to decode the JPEG
     # and convert it into a greyscale image suitable for further processing.
     # This conversion may fail if ZBar was not built with <tt>--with-jpeg</tt>.
+    def self.from_jpeg_with_conversion(io_or_string)
+      self.from_jpeg.convert(ZBar::Format::Y800)
+    end
+
+    # Zbar library handles jpg conversion internally too. So you can process a jpg directly.
     def self.from_jpeg(io_or_string)
       if io_or_string.respond_to?(:read)
         io_or_string = io_or_string.read
@@ -23,7 +28,7 @@ module ZBar
       
       jpeg_image = new()
       jpeg_image.set_data(ZBar::Format::JPEG, io_or_string)
-      return jpeg_image.convert(ZBar::Format::Y800)
+      jpeg_image
     end
   
     # Instantiates an Image given raw PGM data.
