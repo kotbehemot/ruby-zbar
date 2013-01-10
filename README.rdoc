@@ -1,7 +1,7 @@
 = zbar
 by Will Glynn
 
-http://github.com/delta407/ruby-zbar
+https://github.com/willglynn/ruby-zbar
 
 == Modifications 
 by Piotr Barczuk (kot_behemot)
